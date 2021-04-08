@@ -15,5 +15,5 @@ const app = new Myvue({
 })
 
 setTimeout(() => {
-  app.friends.push('c')
+  app.friends[0] = 'c'
 }, 1000)

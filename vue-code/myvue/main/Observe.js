@@ -1,4 +1,4 @@
-import {defineReactive, proxy} from './index.js'
+import {defineReactive} from './index.js'
 
 export default class Observe {
   constructor (data) {
