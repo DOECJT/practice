@@ -13,7 +13,3 @@ const app = new Myvue({
     }
   }
 })
-
-setTimeout(() => {
-  app.friends[0] = 'c'
-}, 1000)

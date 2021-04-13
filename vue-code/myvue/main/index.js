@@ -1,4 +1,5 @@
 import Observe from './Observe.js'
+import Deps from './Deps.js'
 
 export function initState(vm) {
 
@@ -29,8 +30,12 @@ export function defineReactive(data, key, value) {
   if (typeof value === 'object') {
     observe(value)
   }
+  let deps = new Deps()
   Object.defineProperty(data, key, {
     get () {
+      if (Deps.target) {
+        deps.addSub(Deps.target)
+      }
       return value
     },
     set (newValue) {
